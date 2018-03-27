@@ -13,7 +13,7 @@ namespace HomeMate
 		{
 			InitializeComponent();
 
-			MainPage = new HomeMate.MainPage();
+			MainPage = new NavigationPage(new HomeMate.MainPage());
 		}
 
 		protected override void OnStart ()

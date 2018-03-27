@@ -13,5 +13,11 @@ namespace HomeMate
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void Button1_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new WebViewPage(true));
+        }
+
+    }
 }
