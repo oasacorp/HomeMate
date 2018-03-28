@@ -19,5 +19,10 @@ namespace HomeMate
             Navigation.PushAsync(new WebViewPage(true));
         }
 
+        private void Button2_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new BarcodePage());
+        }
+
     }
 }
