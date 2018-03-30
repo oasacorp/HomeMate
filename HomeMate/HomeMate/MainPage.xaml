@@ -1,19 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lc="clr-namespace:Xamarin.Forms.Labs.Controls;assembly=Xamarin.Forms.Labs"
+             xmlns:lb="clr-namespace:Xamarin.Forms.Labs.Behaviors;assembly=Xamarin.Forms.Labs"  
              xmlns:local="clr-namespace:HomeMate"
              x:Class="HomeMate.MainPage"
             >
 
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+"/>
+
+       
+
+        <ContentPage.ToolbarItems>
+
+        <ToolbarItem Name="Settings" Order="Secondary"  />
     </ContentPage.ToolbarItems>
+
+  
 
 
     <ContentPage.Content >
         <Grid>
-            <Grid.RowDefinitions>
+
+                <Grid.RowDefinitions>
                 <RowDefinition Height="7*" />
                 <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
@@ -28,13 +37,13 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" VerticalOptions="Fill" Text="CLick MEee" Clicked="Button1_Clicked"></Button>
-                <Button Grid.Row="0" Grid.Column="1" VerticalOptions="Fill" Text="CLick MEee" Clicked="Button2_Clicked"></Button>
-                <Button Grid.Row="0" Grid.Column="2" VerticalOptions="Fill" Text="CLick MEee"></Button>
-                <Button Grid.Row="1" Grid.Column="0" VerticalOptions="Fill" Text="CLick MEee"></Button>
-                <Button Grid.Row="1" Grid.Column="1" VerticalOptions="Fill" Text="CLick MEee"></Button>
-                <Button Grid.Row="1" Grid.Column="2" VerticalOptions="Fill" Text="CLick MEee"></Button>
-                
+                <Button Grid.Row="0" Grid.Column="0" VerticalOptions="Fill" Text="CLick MEee" Clicked="Button1_Clicked" x:Name="s1" FontSize="Micro">></Button>
+                <Button Grid.Row="0" Grid.Column="1" VerticalOptions="Fill" Clicked="Button2_Clicked" x:Name="s2" FontSize="Micro"></Button>
+                <Button Grid.Row="0" Grid.Column="2" VerticalOptions="Fill" Text="CLick MEee" Clicked="Button3_Clicked" x:Name="s3" FontSize="Micro"></Button>
+                <Button Grid.Row="1" Grid.Column="0" VerticalOptions="Fill" Text="CLick MEee" x:Name="s4" FontSize="Micro" Clicked="Button4_Clicked"></Button>
+                <Button Grid.Row="1" Grid.Column="1" VerticalOptions="Fill" Text="CLick MEee" x:Name="s5" FontSize="Micro" Clicked="Button5_Clicked"></Button>
+                <Button Grid.Row="1" Grid.Column="2" VerticalOptions="Fill" Text="CLick MEee" x:Name="s6" FontSize="Micro" Clicked="Button6_Clicked"></Button>
+
             </Grid>
 
         </Grid>

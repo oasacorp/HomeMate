@@ -1,12 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   
              x:Class="HomeMate.BarcodePage">
     <ContentPage.Content>
+
+
         <StackLayout VerticalOptions="Center"
-                     HorizontalOptions="Center">
+                     HorizontalOptions="CenterAndExpand" >
+
+            <Entry x:Name="ShortcutTitle" Placeholder="Room Name" ></Entry>
+            <Entry x:Name="ShortcutAddress" Placeholder="Address" ></Entry>
+            <StackLayout Orientation="Horizontal">
             <Button x:Name="ButtonScanDefault" Text="Scan" Clicked="ButtonScanDefault_Clicked"/>
-            
+            <Button x:Name="AddtoDB" Text="Confirm" Clicked="AddtoDB_Clicked"/>
+            </StackLayout>
         </StackLayout>
+
     </ContentPage.Content>
-</ContentPage>
+</ContentPage> 

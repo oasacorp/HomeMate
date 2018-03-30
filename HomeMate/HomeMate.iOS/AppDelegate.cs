@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
@@ -22,9 +23,13 @@ namespace HomeMate.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            string filename = "homemate_db.sqlite";
+            string filelocation = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "..", "Library");
+            string fullpath = Path.Combine(filelocation, filename);
+
             global::Xamarin.Forms.Forms.Init();
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-            LoadApplication(new App());
+            LoadApplication(new App(fullpath));
 
             return base.FinishedLaunching(app, options);
         }

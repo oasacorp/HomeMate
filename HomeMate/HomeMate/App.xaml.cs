@@ -8,13 +8,26 @@ using Xamarin.Forms;
 namespace HomeMate
 {
 	public partial class App : Application
+
 	{
+        public static string DB_PATH = string.Empty;
+
 		public App ()
 		{
 			InitializeComponent();
 
 			MainPage = new NavigationPage(new HomeMate.MainPage());
 		}
+
+        public App(string _DB_PATH)
+        {
+            InitializeComponent();
+            DB_PATH = _DB_PATH;
+            MainPage = new NavigationPage(new HomeMate.MainPage());
+
+
+
+        }
 
 		protected override void OnStart ()
 		{
