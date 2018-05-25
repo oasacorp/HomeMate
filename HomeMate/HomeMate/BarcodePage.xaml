@@ -11,6 +11,20 @@
 
             <Entry x:Name="ShortcutTitle" Placeholder="Room Name" ></Entry>
             <Entry x:Name="ShortcutAddress" Placeholder="Address" ></Entry>
+            <Picker x:Name="iconPicker" Title="Select Icon"  HorizontalOptions="FillAndExpand" >
+                <Picker.Items>
+                    <x:String>Plus</x:String>
+                    <x:String>Home</x:String>
+                    <x:String>Bedroom</x:String>
+                    <x:String>Bath</x:String>
+                    <x:String>Living Room</x:String>
+                    <x:String>Dining</x:String>
+                    <x:String>Medical</x:String>
+                    <x:String>Garage</x:String>
+                    <x:String>Guest</x:String>
+                    <x:String>Master</x:String>
+                </Picker.Items>
+            </Picker>
             <StackLayout Orientation="Horizontal">
             <Button x:Name="ButtonScanDefault" Text="Scan" Clicked="ButtonScanDefault_Clicked"/>
             <Button x:Name="AddtoDB" Text="Confirm" Clicked="AddtoDB_Clicked"/>

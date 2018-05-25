@@ -13,6 +13,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+  <key>UIAppFonts</key>
+  <array>
+    <string>materialicons.ttf</string>
+    <string>FontAwesome.ttf</string>
+  </array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -20,6 +25,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+
 	<key>MinimumOSVersion</key>
 	<string>10.3</string>
 	<key>CFBundleDisplayName</key>

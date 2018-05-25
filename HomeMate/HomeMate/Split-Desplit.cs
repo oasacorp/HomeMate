@@ -23,6 +23,7 @@ namespace HomeMate
                 string[] fullText = decText.Split('!');
                 s.Title = fullText[0];
                 s.Address = fullText[1];
+                s.Icon = Convert.ToInt32(fullText[2]);
 
             }
             return s;

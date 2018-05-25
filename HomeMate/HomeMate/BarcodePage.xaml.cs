@@ -22,7 +22,9 @@ namespace HomeMate
         int flag=0;
         public BarcodePage()
         {
+           
             InitializeComponent();
+            
         }
 
         protected override void OnAppearing()
@@ -39,6 +41,7 @@ namespace HomeMate
             id = _id;
             s = new Shortcut();
             InitializeComponent();
+            //iconPicker.SelectedIndex = 1;
         }
 
         private async void ButtonScanDefault_Clicked(object sender, EventArgs e)
@@ -56,6 +59,7 @@ namespace HomeMate
                     barcoderesult = result.Text;
                     s = Split_Desplit.Split(barcoderesult);
                     ShortcutTitle.Text = s.Title;
+                    iconPicker.SelectedIndex = s.Icon;
                     
                     if (s.Title == "NaN")
                     {
@@ -78,6 +82,8 @@ namespace HomeMate
         private void AddtoDB_Clicked(object sender, EventArgs e)
         {
 
+           
+
             if (flag == 1)
             {
 
@@ -88,7 +94,7 @@ namespace HomeMate
                     Address = ShortcutAddress.Text,
                     Id = id,
                     Title = ShortcutTitle.Text,
-                    Icon = 2
+                    Icon = iconPicker.SelectedIndex
                 };
 
                 using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.DB_PATH))
@@ -124,10 +130,38 @@ namespace HomeMate
             }
             else
             {
-                DisplayAlert("Failure", "No valid Barcode Scanned", "Ok");
+                if (ShortcutAddress.Text == "")
+                {
+                    DisplayAlert("Failure", "No valid Barcode Scanned", "Ok");
+                    flag = 0;
+
+                }
+                else
+                {
+                    s = Split_Desplit.Split(ShortcutAddress.Text);
+
+                    if (s.Title == "NaN")
+                    {
+                        DisplayAlert("Failure", "Incorrect Format", "Ok");
+                        flag = 0;
+                    }
+                    else
+                    {
+                        ShortcutAddress.Text = Crypto.Encrypt(s.Address);
+                        if (ShortcutTitle.Text==null)
+                        {
+                            ShortcutTitle.Text = s.Title;
+                            iconPicker.SelectedIndex = s.Icon;
+                        }
+                        DisplayAlert("Success", "Please confirm again to save", "Ok");
+                        flag = 1;
+
+                    }
+                }
+                
 
             }
-            flag = 0;
+
 
         }
     

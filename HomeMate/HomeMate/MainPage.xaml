@@ -3,49 +3,115 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:lc="clr-namespace:Xamarin.Forms.Labs.Controls;assembly=Xamarin.Forms.Labs"
              xmlns:lb="clr-namespace:Xamarin.Forms.Labs.Behaviors;assembly=Xamarin.Forms.Labs"  
-             xmlns:local="clr-namespace:HomeMate"
+             xmlns:local="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
              x:Class="HomeMate.MainPage"
-            >
+
+             >
 
 
+    <ContentPage.ToolbarItems>
 
-       
 
-        <ContentPage.ToolbarItems>
-
-        <ToolbarItem Name="Settings" Order="Secondary"  />
+        <ToolbarItem Name="Clear All" Order="Secondary" Activated="ClearAll_Clicked" />
     </ContentPage.ToolbarItems>
+    
 
-  
 
+        <ContentPage.Content >
+        <AbsoluteLayout VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+            <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            Source="bg.jpg" Aspect="AspectFill"/>
 
-    <ContentPage.Content >
-        <Grid>
+            <Image AbsoluteLayout.LayoutBounds="0.5,0.25,-1,-1"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+            Source="hm2.png" />
+
+            <Grid VerticalOptions="End" AbsoluteLayout.LayoutBounds="0, 1, 1, 1" AbsoluteLayout.LayoutFlags="All" >
 
                 <Grid.RowDefinitions>
-                <RowDefinition Height="7*" />
-                <RowDefinition Height="3*" />
-            </Grid.RowDefinitions>
-            <Image Grid.Row="0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill "/>
-            <Grid Grid.Row="1" RowSpacing="0" ColumnSpacing="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="10*" />
+
+                    <RowDefinition Height="10*" />
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" VerticalOptions="Fill" Text="CLick MEee" Clicked="Button1_Clicked" x:Name="s1" FontSize="Micro">></Button>
-                <Button Grid.Row="0" Grid.Column="1" VerticalOptions="Fill" Clicked="Button2_Clicked" x:Name="s2" FontSize="Micro"></Button>
-                <Button Grid.Row="0" Grid.Column="2" VerticalOptions="Fill" Text="CLick MEee" Clicked="Button3_Clicked" x:Name="s3" FontSize="Micro"></Button>
-                <Button Grid.Row="1" Grid.Column="0" VerticalOptions="Fill" Text="CLick MEee" x:Name="s4" FontSize="Micro" Clicked="Button4_Clicked"></Button>
-                <Button Grid.Row="1" Grid.Column="1" VerticalOptions="Fill" Text="CLick MEee" x:Name="s5" FontSize="Micro" Clicked="Button5_Clicked"></Button>
-                <Button Grid.Row="1" Grid.Column="2" VerticalOptions="Fill" Text="CLick MEee" x:Name="s6" FontSize="Micro" Clicked="Button6_Clicked"></Button>
+
+                <StackLayout  Orientation="Vertical" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0">
+
+                    <Button  x:Name="s1" BackgroundColor="#503F3F3F" Font="Material1" Text="+" TextColor="White" HeightRequest="56" WidthRequest="53" FontSize="Large" BorderRadius="23" BorderColor="White" BorderWidth="1" Opacity="0.7"  Clicked="Button1_Clicked" HorizontalOptions="Center">
+                        <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" Android="FontAwesome.ttf#Font Awesome 5 Free Regular" iOS="Font Awesome 5 Free"  />
+                    </Button.FontFamily>
+                    </Button>
+                    <Label  Text="Add" x:Name="s1L" HorizontalTextAlignment="Center" TextColor="White" FontSize="Micro" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout  Orientation="Vertical" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0">
+
+
+                    <Button  x:Name="s2" BackgroundColor="#503F3F3F" Font="Material1" Text="+" TextColor="White" HeightRequest="56" WidthRequest="53" FontSize="Large" BorderRadius="23" BorderColor="White" BorderWidth="1" Opacity="0.7"  Clicked="Button2_Clicked" HorizontalOptions="Center">
+                        <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" Android="FontAwesome.ttf#Font Awesome 5 Free Regular" iOS="Font Awesome 5 Free"  />
+                    </Button.FontFamily>
+                    </Button>
+                    <Label  Text="Add" x:Name="s2L" HorizontalTextAlignment="Center" TextColor="White" FontSize="Micro" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout  Orientation="Vertical" HorizontalOptions="Center" Grid.Column="2" Grid.Row="0">
+
+
+                    <Button  x:Name="s3" BackgroundColor="#503F3F3F" Font="Material1" Text="+" TextColor="White" HeightRequest="56" WidthRequest="53" FontSize="Large" BorderRadius="23" BorderColor="White" BorderWidth="1" Opacity="0.7"  Clicked="Button3_Clicked" HorizontalOptions="Center">
+                        <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" Android="FontAwesome.ttf#Font Awesome 5 Free Regular" iOS="Font Awesome 5 Free"  />
+                    </Button.FontFamily>
+                    </Button>
+                    <Label  Text="Add" x:Name="s3L" HorizontalTextAlignment="Center" TextColor="White" FontSize="Micro" HorizontalOptions="Center"/>
+                </StackLayout>
+
+
+                <StackLayout  Orientation="Vertical" HorizontalOptions="Center" Grid.Column="0" Grid.Row="1">
+
+
+                    <Button  x:Name="s4" BackgroundColor="#503F3F3F" Font="Material1" Text="+" TextColor="White" HeightRequest="56" WidthRequest="53" FontSize="Large" BorderRadius="23" BorderColor="White" BorderWidth="1" Opacity="0.7"  Clicked="Button4_Clicked" HorizontalOptions="Center">
+                        <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" Android="FontAwesome.ttf#Font Awesome 5 Free Regular" iOS="Font Awesome 5 Free"  />
+                    </Button.FontFamily>
+                    </Button>
+                    <Label  Text="Add" x:Name="s4L" HorizontalTextAlignment="Center" TextColor="White" FontSize="Micro" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout  Orientation="Vertical" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1">
+
+
+                    <Button  x:Name="s5" BackgroundColor="#503F3F3F" Font="Material1" Text="+" TextColor="White" HeightRequest="56" WidthRequest="53" FontSize="Large" BorderRadius="23" BorderColor="White" BorderWidth="1" Opacity="0.7"  Clicked="Button5_Clicked" HorizontalOptions="Center">
+                        <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" Android="FontAwesome.ttf#Font Awesome 5 Free Regular" iOS="Font Awesome 5 Free"  />
+                    </Button.FontFamily>
+                    </Button>
+
+                    <Label  Text="Add" x:Name="s5L" HorizontalTextAlignment="Center" TextColor="White" FontSize="Micro" HorizontalOptions="Center" />
+                </StackLayout>
+                <StackLayout  Orientation="Vertical" HorizontalOptions="Center" Grid.Column="2" Grid.Row="1">
+
+                    <Button  x:Name="s6" BackgroundColor="#503F3F3F"  Text="&#xf167;" TextColor="White" HeightRequest="56" WidthRequest="53" FontSize="Large" BorderRadius="23" BorderColor="White" BorderWidth="1" Opacity="0.7"  Clicked="Button5_Clicked" HorizontalOptions="Center">
+
+
+                        <Button.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String" Android="FontAwesome.ttf#Font Awesome 5 Free Solid" iOS="Font Awesome 5 Free"  />
+                        </Button.FontFamily>
+                    </Button>
+           
+
+                    <Label  Text="Add" x:Name="s6L" HorizontalTextAlignment="Center" TextColor="White" FontSize="Micro" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+
+                    <Label  Text=" "/>
+
+
+                </StackLayout>
 
             </Grid>
 
-        </Grid>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

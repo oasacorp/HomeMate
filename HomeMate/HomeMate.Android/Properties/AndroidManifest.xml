@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.HomeMate">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.prolite.HomeMate" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
 	<application android:label="HomeMate.Android"></application>
-  <item name="android:windowNoTitle">true</item>
-
+	<item name="android:windowNoTitle">true</item>
 </manifest>
